@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bulma Preact</title>
+    <link href="https://cdn.bootcss.com/bulma/0.6.2/css/bulma.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/require.js/2.3.5/require.min.js"></script>
+    <script src="/demo/config.js?1519283180163"></script>
+</head>
+<body>
+
+    <div class="container columns">
+        <div class="column is-2"><aside class="menu "><p class="menu-label">Index</p><ul class="menu-list"><li><a href="/" class>Index</a></li></ul><p class="menu-label">Components</p><ul class="menu-list"><li><a href="/Button/" class>Button</a></li><li><a href="/Columns/" class>Columns</a></li><li><a href="/Dropdown/" class>Dropdown</a></li><li><a href="/Form/" class>Form</a></li><li><a href="/Menu/" class>Menu</a></li><li><a href="/Notification/" class>Notification</a></li><li><a href="/Tabs/" class=" is-active">Tabs</a></li></ul></aside></div>
+        <div class="column content-holder"><div class="content"><h2 id="tabs">Tabs</h2>
+<h3 id="default">Default</h3>
+</div><pre><code class="lang-tsx"><span class="hljs-keyword">import</span> { Tabs } from <span class="hljs-string">'bulma-preact'</span>
+<span class="hljs-keyword">import</span> { render, h } from <span class="hljs-string">'preact'</span>
+
+const items = [
+    { title: <span class="hljs-string">'Pictures'</span> },
+    { title: <span class="hljs-string">'Music'</span> },
+    { title: <span class="hljs-string">'Videos'</span> },
+    { title: <span class="hljs-string">'Files'</span> }
+]
+
+render(&lt;Tabs items={items} /&gt;, container)
+</code></pre><div class="column demo-holder"></div><div class="content">
+<h3 id="props">Props</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Props</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>align</em></td>
+<td style="text-align:left"><code>&quot;left/right/centered/fullwidth&quot;</code></td>
+<td style="text-align:left">&quot;left&quot;</td>
+<td style="text-align:left">对齐方式</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>isBoxed</em></td>
+<td style="text-align:left"><code>boolean</code></td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">按钮boxed样式</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>isToggle</em></td>
+<td style="text-align:left"><code>boolean/&quot;rounded&quot;</code></td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">按钮toggle样式</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>activeIndex</em></td>
+<td style="text-align:left"><code>number</code></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">默认聚焦</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>items</em></td>
+<td style="text-align:left"><code>Tabs.Item[]</code></td>
+<td style="text-align:left">[]</td>
+<td style="text-align:left">选项</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>showItems</em></td>
+<td style="text-align:left"><code>[]</code></td>
+<td style="text-align:left">undefined</td>
+<td style="text-align:left">选项对应展示内容</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>onTabs</em></td>
+<td style="text-align:left"><code>function(index: number): void</code></td>
+<td style="text-align:left">undefined</td>
+<td style="text-align:left">选中事件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="with-options">With Options</h3>
+</div><pre><code class="lang-tsx"><span class="xml">import </span><span class="hljs-template-variable">{ Tabs }</span><span class="xml"> from 'bulma-preact'
+import </span><span class="hljs-template-variable">{ render, h }</span><span class="xml"> from 'preact'
+
+const items = [
+    </span><span class="hljs-template-variable">{ title: 'Pictures', icon: 'image' }</span><span class="xml">,
+    </span><span class="hljs-template-variable">{ title: 'Music', icon: 'music' }</span><span class="xml">,
+    </span><span class="hljs-template-variable">{ title: 'Videos', icon: 'film' }</span><span class="xml">,
+    </span><span class="hljs-template-variable">{ title: 'Files', icon: 'file' }</span><span class="xml">
+]
+const showItems = [
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://www.baidu.com/img/baidu_jgylogo3.gif"</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>,
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://www.w3school.com.cn/i/horse.ogg"</span> <span class="hljs-attr">autoplay</span> <span class="hljs-attr">controls</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>,
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://www.w3school.com.cn/i/movie.ogg"</span> <span class="hljs-attr">loop</span> <span class="hljs-attr">autoplay</span> <span class="hljs-attr">controls</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>,
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Nothing!<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+]
+
+const onTabs = index =&gt; alert(items[index].title)
+
+render(<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Tabs</span> <span class="hljs-attr">items</span>=</span></span><span class="hljs-template-variable">{items}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">activeIndex</span>=</span></span><span class="hljs-template-variable">{0}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">isBoxed</span> <span class="hljs-attr">align</span>=<span class="hljs-string">"centered"</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Tabs</span> <span class="hljs-attr">items</span>=</span></span><span class="hljs-template-variable">{items}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">activeIndex</span>=</span></span><span class="hljs-template-variable">{1}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">isToggle</span> <span class="hljs-attr">align</span>=<span class="hljs-string">"fullwidth"</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Tabs</span> <span class="hljs-attr">items</span>=</span></span><span class="hljs-template-variable">{items}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">activeIndex</span>=</span></span><span class="hljs-template-variable">{2}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">isToggle</span>=<span class="hljs-string">"rounded"</span> <span class="hljs-attr">isSize</span>=<span class="hljs-string">"small"</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Tabs</span> <span class="hljs-attr">items</span>=</span></span><span class="hljs-template-variable">{items}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">activeIndex</span>=</span></span><span class="hljs-template-variable">{3}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">showItems</span>=</span></span><span class="hljs-template-variable">{showItems}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">onTabs</span>=</span></span><span class="hljs-template-variable">{onTabs}</span><span class="xml"><span class="hljs-tag">/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>, container)</span>
+</code></pre><div class="column demo-holder"></div><div class="content">
+</div><script>define("demo-code-0", ["require", "exports", "bulma-preact", "preact"], function (require, exports, bulma_preact_1, preact_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    const container = document.querySelectorAll('.content-holder .lang-tsx')[0].parentNode.nextElementSibling;
+    const items = [
+        { title: 'Pictures' },
+        { title: 'Music' },
+        { title: 'Videos' },
+        { title: 'Files' }
+    ];
+    preact_1.render(preact_1.h(bulma_preact_1.Tabs, { items: items }), container);
+});
+require(['demo-code-0'])
+define("demo-code-1", ["require", "exports", "bulma-preact", "preact"], function (require, exports, bulma_preact_1, preact_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    const container = document.querySelectorAll('.content-holder .lang-tsx')[1].parentNode.nextElementSibling;
+    const items = [
+        { title: 'Pictures', icon: 'image' },
+        { title: 'Music', icon: 'music' },
+        { title: 'Videos', icon: 'film' },
+        { title: 'Files', icon: 'file' }
+    ];
+    const showItems = [
+        preact_1.h("p", null,
+            preact_1.h("img", { src: "https://www.baidu.com/img/baidu_jgylogo3.gif" })),
+        preact_1.h("p", null,
+            preact_1.h("audio", { src: "http://www.w3school.com.cn/i/horse.ogg", autoplay: true, controls: true })),
+        preact_1.h("p", null,
+            preact_1.h("video", { src: "http://www.w3school.com.cn/i/movie.ogg", loop: true, autoplay: true, controls: true })),
+        preact_1.h("h3", null, "Nothing!")
+    ];
+    const onTabs = index => alert(items[index].title);
+    preact_1.render(preact_1.h("div", null,
+        preact_1.h(bulma_preact_1.Tabs, { items: items, activeIndex: 0, isBoxed: true, align: "centered" }),
+        preact_1.h("br", null),
+        preact_1.h(bulma_preact_1.Tabs, { items: items, activeIndex: 1, isToggle: true, align: "fullwidth" }),
+        preact_1.h("br", null),
+        preact_1.h(bulma_preact_1.Tabs, { items: items, activeIndex: 2, isToggle: "rounded", isSize: "small" }),
+        preact_1.h("br", null),
+        preact_1.h(bulma_preact_1.Tabs, { items: items, activeIndex: 3, showItems: showItems, onTabs: onTabs })), container);
+});
+require(['demo-code-1'])</script></div>
+    </div>
+                
+<a href="https://github.com/bulma-preact/bulma-preact" target="_"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+</body>
+</html>
