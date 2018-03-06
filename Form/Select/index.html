@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bulma Preact</title>
+    <link href="https://cdn.bootcss.com/bulma/0.6.2/css/bulma.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="/bulma-preact.standalone.js?1520331429401"></script>
+</head>
+<body>
+
+    <div class="container columns">
+        <div class="column is-2"><aside class="menu "><p class="menu-label">Index</p><ul class="menu-list"><li><a href="/" class>Index</a></li></ul><p class="menu-label">Components</p><ul class="menu-list"><li><a href="/Columns/" class>Columns</a></li><li><a class>Components</a><ul><li><a href="/Components/Dropdown/" class>Dropdown</a></li><li><a href="/Components/Menu/" class>Menu</a></li><li><a href="/Components/Tabs/" class>Tabs</a></li></ul></li><li><a class>Elements</a><ul><li><a href="/Elements/Button/" class>Button</a></li><li><a href="/Elements/Content/" class>Content</a></li><li><a href="/Elements/Notification/" class>Notification</a></li><li><a href="/Elements/Progress/" class>Progress</a></li></ul></li><li><a href="/Form/" class>Form</a><ul><li><a href="/Form/Radio/" class>Radio</a></li><li><a href="/Form/Select/" class=" is-active">Select</a></li></ul></li></ul></aside></div>
+        <div class="column content-holder"><div class="content"><h2 id="select">Select</h2>
+<h3 id="props">Props</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Props</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>value</em></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">&quot;&quot;</td>
+<td style="text-align:left">value</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>options</em></td>
+<td style="text-align:left"><code>Select.Option[]</code></td>
+<td style="text-align:left">[]</td>
+<td style="text-align:left">选项</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>multiple &amp; size</em></td>
+<td style="text-align:left"><code>boolean &amp; number</code></td>
+<td style="text-align:left">undefined</td>
+<td style="text-align:left">多选</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>onChange</em></td>
+<td style="text-align:left"><code>function(e: Event): void</code></td>
+<td style="text-align:left">undefined</td>
+<td style="text-align:left">选中事件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="demo">Demo</h3>
+</div><pre><code class="lang-tsx"><span class="xml">import </span><span class="hljs-template-variable">{ Form, Columns }</span><span class="xml"> from 'bulma-preact'
+import </span><span class="hljs-template-variable">{ render, h }</span><span class="xml"> from 'preact'
+const </span><span class="hljs-template-variable">{ <span class="hljs-keyword">Select</span> }</span><span class="xml"> = Form
+const </span><span class="hljs-template-variable">{ Column }</span><span class="xml"> = Columns
+const options = [
+    </span><span class="hljs-template-variable">{ name: '请选择', value: ''}</span><span class="xml">,
+    </span><span class="hljs-template-variable">{ name: 'Form', value: '1'}</span><span class="xml">,
+    </span><span class="hljs-template-variable">{ name: 'Elements', value: '2'}</span><span class="xml">,
+    </span><span class="hljs-template-variable">{ name: 'Components', value: '3'}</span><span class="xml">
+]
+render(<span class="hljs-tag">&lt;<span class="hljs-name">Columns</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Column</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Select</span> <span class="hljs-attr">options</span>=</span></span><span class="hljs-template-variable">{options}</span><span class="xml"><span class="hljs-tag"> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Column</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Column</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Select</span> <span class="hljs-attr">options</span>=</span></span><span class="hljs-template-variable">{options}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">value</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">isColor</span>=<span class="hljs-string">"danger"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Column</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Column</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Select</span> <span class="hljs-attr">options</span>=</span></span><span class="hljs-template-variable">{options}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">isDisabled</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Column</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Column</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Select</span> <span class="hljs-attr">options</span>=</span></span><span class="hljs-template-variable">{options}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">isRounded</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Column</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Column</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Select</span> <span class="hljs-attr">options</span>=</span></span><span class="hljs-template-variable">{options}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">isSize</span>=<span class="hljs-string">"small"</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">size</span>=</span></span><span class="hljs-template-variable">{4}</span><span class="xml"><span class="hljs-tag">/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Column</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Columns</span>&gt;</span>, container)</span>
+</code></pre><div class="demo-holder" style="padding: .5em 0 2em"></div><div class="content">
+</div><script>(function (exports) {"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const container = document.querySelectorAll('.content-holder .lang-tsx')[0].parentNode.nextElementSibling;
+const bulma_preact_1 = BulmaPreact;
+const preact_1 = BulmaPreact.Preact;
+const { Select } = bulma_preact_1.Form;
+const { Column } = bulma_preact_1.Columns;
+const options = [
+    { name: '请选择', value: '' },
+    { name: 'Form', value: '1' },
+    { name: 'Elements', value: '2' },
+    { name: 'Components', value: '3' }
+];
+preact_1.render(preact_1.h(bulma_preact_1.Columns, null,
+    preact_1.h(Column, null,
+        preact_1.h(Select, { options: options })),
+    preact_1.h(Column, null,
+        preact_1.h(Select, { options: options, value: "2", isColor: "danger" })),
+    preact_1.h(Column, null,
+        preact_1.h(Select, { options: options, value: "1", isDisabled: true })),
+    preact_1.h(Column, null,
+        preact_1.h(Select, { options: options, isRounded: true })),
+    preact_1.h(Column, null,
+        preact_1.h(Select, { options: options, isSize: "small", multiple: true, size: 4 }))), container);
+})({})</script></div>
+    </div>
+                
+<a href="https://github.com/bulma-preact/bulma-preact" target="_"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+</body>
+</html>

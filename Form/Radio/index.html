@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bulma Preact</title>
+    <link href="https://cdn.bootcss.com/bulma/0.6.2/css/bulma.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="/bulma-preact.standalone.js?1520331429322"></script>
+</head>
+<body>
+
+    <div class="container columns">
+        <div class="column is-2"><aside class="menu "><p class="menu-label">Index</p><ul class="menu-list"><li><a href="/" class>Index</a></li></ul><p class="menu-label">Components</p><ul class="menu-list"><li><a href="/Columns/" class>Columns</a></li><li><a class>Components</a><ul><li><a href="/Components/Dropdown/" class>Dropdown</a></li><li><a href="/Components/Menu/" class>Menu</a></li><li><a href="/Components/Tabs/" class>Tabs</a></li></ul></li><li><a class>Elements</a><ul><li><a href="/Elements/Button/" class>Button</a></li><li><a href="/Elements/Content/" class>Content</a></li><li><a href="/Elements/Notification/" class>Notification</a></li><li><a href="/Elements/Progress/" class>Progress</a></li></ul></li><li><a href="/Form/" class>Form</a><ul><li><a href="/Form/Radio/" class=" is-active">Radio</a></li><li><a href="/Form/Select/" class>Select</a></li></ul></li></ul></aside></div>
+        <div class="column content-holder"><div class="content"><h2 id="radio">Radio</h2>
+<h3 id="radio-props">Radio Props</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Props</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>defaultChecked</em></td>
+<td style="text-align:left"><code>boolean</code></td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">初始是否选中        </td>
+</tr>
+<tr>
+<td style="text-align:left"><em>checked</em></td>
+<td style="text-align:left"><code>boolean</code></td>
+<td style="text-align:left">undefined</td>
+<td style="text-align:left">指定当前是否选中</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>value</em></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">undefined</td>
+<td style="text-align:left">根据 value 进行比较，判断是否选中</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>disabled</em></td>
+<td style="text-align:left"><code>boolean</code></td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">是否禁用</td>
+</tr>
+</tbody>
+</table>
+<h3 id="radiogroup-props">RadioGroup Props</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Props</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>defaultValue</em></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">无</td>
+<td style="text-align:left">默认选中的值        </td>
+</tr>
+<tr>
+<td style="text-align:left"><em>value</em></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">&quot;&quot;</td>
+<td style="text-align:left">选中的值</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>options</em></td>
+<td style="text-align:left"><code>Radio.Option[]</code></td>
+<td style="text-align:left">[]</td>
+<td style="text-align:left">选项</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>onChange</em></td>
+<td style="text-align:left"><code>function(value: string)</code></td>
+<td style="text-align:left">undefined</td>
+<td style="text-align:left">选中事件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="radio-option">Radio.Option</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Props</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>defaultValue</em></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">无</td>
+<td style="text-align:left">默认选中的值        </td>
+</tr>
+<tr>
+<td style="text-align:left"><em>value</em></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">&quot;&quot;</td>
+<td style="text-align:left">选中的值</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>options</em></td>
+<td style="text-align:left"><code>Radio.Option[]</code></td>
+<td style="text-align:left">[]</td>
+<td style="text-align:left">选项</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>onChange</em></td>
+<td style="text-align:left"><code>function(value: string)</code></td>
+<td style="text-align:left">undefined</td>
+<td style="text-align:left">选中事件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="demo">Demo</h3>
+</div><pre><code class="lang-tsx"><span class="xml">import </span><span class="hljs-template-variable">{ render, h,Component }</span><span class="xml"> from 'preact'
+import </span><span class="hljs-template-variable">{ Form, Columns }</span><span class="xml"> from 'bulma-preact'
+import </span><span class="hljs-template-variable">{ render, h }</span><span class="xml"> from 'preact'
+const </span><span class="hljs-template-variable">{ Radio }</span><span class="xml"> = Form
+
+const options = [
+    </span><span class="hljs-template-variable">{ name: 'Form', value: '1'}</span><span class="xml">,
+    </span><span class="hljs-template-variable">{ name: 'Elements', value: '2'}</span><span class="xml">,
+    </span><span class="hljs-template-variable">{ name: 'Components', value: '3'}</span><span class="xml">,
+    </span><span class="hljs-template-variable">{ name: 'disabled', value: '4',disabled:true}</span><span class="xml">
+]
+const style = </span><span class="hljs-template-variable">{
+    display:'block',
+    marginLeft:'5px'
+}</span><span class="xml">
+class RadioExample extends Component </span><span class="hljs-template-variable">{
+  state={
+      value:''
+  }</span><span class="xml">
+  onChange = (ev) =&gt; </span><span class="hljs-template-variable">{
+      console.log('ev',ev.target)
+    this.setState({
+      value: ev.target.value
+    }</span><span class="xml">)
+  }
+  render()</span><span class="hljs-template-variable">{
+    return &lt;div&gt;
+      &lt;div&gt;
+        基本用法
+                &lt;Radio value="radio"&gt;a&lt;/Radio&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        一组互斥的 Radio 配合使用。
+            &lt;/div&gt;
+      &lt;div&gt;
+        &lt;Radio.RadioGroup defaultValue={1}</span><span class="xml">&gt;
+          <span class="hljs-tag">&lt;<span class="hljs-name">Radio</span> <span class="hljs-attr">value</span>=</span></span><span class="hljs-template-variable">{1}</span><span class="xml"><span class="hljs-tag">&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">Radio</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Radio</span> <span class="hljs-attr">value</span>=</span></span><span class="hljs-template-variable">{2}</span><span class="xml"><span class="hljs-tag">&gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">Radio</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Radio</span> <span class="hljs-attr">value</span>=</span></span><span class="hljs-template-variable">{3}</span><span class="xml"><span class="hljs-tag">&gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-name">Radio</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Radio</span> <span class="hljs-attr">value</span>=</span></span><span class="hljs-template-variable">{4}</span><span class="xml"><span class="hljs-tag">&gt;</span>D<span class="hljs-tag">&lt;/<span class="hljs-name">Radio</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Radio.RadioGroup</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        Radio 禁用
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Radio.RadioGroup</span> <span class="hljs-attr">options</span>=</span></span><span class="hljs-template-variable">{options}</span><span class="xml"><span class="hljs-tag"> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        Radio onChange 事件(style属性，目前有点小bug)
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Radio.RadioGroup</span> <span class="hljs-attr">value</span>=</span></span><span class="hljs-template-variable">{this.state.value}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">onChange</span>=</span></span><span class="hljs-template-variable">{this.onChange}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">options</span>=</span></span><span class="hljs-template-variable">{options}</span><span class="xml"><span class="hljs-tag"> &gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Radio</span> <span class="hljs-attr">value</span>=</span></span><span class="hljs-template-variable">{1}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">style</span>=</span></span><span class="hljs-template-variable">{style}</span><span class="xml"><span class="hljs-tag">&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">Radio</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Radio</span> <span class="hljs-attr">value</span>=</span></span><span class="hljs-template-variable">{2}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">style</span>=</span></span><span class="hljs-template-variable">{style}</span><span class="xml"><span class="hljs-tag">&gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">Radio</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Radio</span> <span class="hljs-attr">value</span>=</span></span><span class="hljs-template-variable">{3}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">style</span>=</span></span><span class="hljs-template-variable">{style}</span><span class="xml"><span class="hljs-tag">&gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-name">Radio</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">Radio</span> <span class="hljs-attr">value</span>=</span></span><span class="hljs-template-variable">{4}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">style</span>=</span></span><span class="hljs-template-variable">{style}</span><span class="xml"><span class="hljs-tag">&gt;</span>D<span class="hljs-tag">&lt;/<span class="hljs-name">Radio</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Radio.RadioGroup</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  }
+}
+render(<span class="hljs-tag">&lt;<span class="hljs-name">RadioExample</span> /&gt;</span>, container)</span>
+</code></pre><div class="demo-holder" style="padding: .5em 0 2em"></div><div class="content">
+</div><script>(function (exports) {"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const container = document.querySelectorAll('.content-holder .lang-tsx')[0].parentNode.nextElementSibling;
+const preact_1 = BulmaPreact.Preact;
+const bulma_preact_1 = BulmaPreact;
+const { Radio } = bulma_preact_1.Form;
+const options = [
+    { name: 'Form', value: '1' },
+    { name: 'Elements', value: '2' },
+    { name: 'Components', value: '3' },
+    { name: 'disabled', value: '4', disabled: true }
+];
+const style = {
+    display: 'block',
+    marginLeft: '5px'
+};
+class RadioExample extends preact_1.Component {
+    constructor() {
+        super(...arguments);
+        this.state = {
+            value: ''
+        };
+        this.onChange = (ev) => {
+            console.log('ev', ev.target);
+            this.setState({
+                value: ev.target.value
+            });
+        };
+    }
+    render() {
+        return preact_1.h("div", null,
+            preact_1.h("div", null,
+                "\u57FA\u672C\u7528\u6CD5",
+                preact_1.h(Radio, { value: "radio" }, "a")),
+            preact_1.h("div", null, "\u4E00\u7EC4\u4E92\u65A5\u7684 Radio \u914D\u5408\u4F7F\u7528\u3002"),
+            preact_1.h("div", null,
+                preact_1.h(Radio.RadioGroup, { defaultValue: 1 },
+                    preact_1.h(Radio, { value: 1 }, "A"),
+                    preact_1.h(Radio, { value: 2 }, "B"),
+                    preact_1.h(Radio, { value: 3 }, "C"),
+                    preact_1.h(Radio, { value: 4 }, "D"))),
+            preact_1.h("div", null, "Radio \u7981\u7528"),
+            preact_1.h("div", null,
+                preact_1.h(Radio.RadioGroup, { options: options })),
+            preact_1.h("div", null, "Radio onChange \u4E8B\u4EF6(style\u5C5E\u6027\uFF0C\u76EE\u524D\u6709\u70B9\u5C0Fbug)"),
+            preact_1.h("div", null,
+                preact_1.h(Radio.RadioGroup, { value: this.state.value, onChange: this.onChange, options: options },
+                    preact_1.h(Radio, { value: 1, style: style }, "A"),
+                    preact_1.h(Radio, { value: 2, style: style }, "B"),
+                    preact_1.h(Radio, { value: 3, style: style }, "C"),
+                    preact_1.h(Radio, { value: 4, style: style }, "D"))));
+    }
+}
+preact_1.render(preact_1.h(RadioExample, null), container);
+})({})</script></div>
+    </div>
+                
+<a href="https://github.com/bulma-preact/bulma-preact" target="_"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+</body>
+</html>
