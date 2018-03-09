@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bulma Preact</title>
+    <link href="https://cdn.bootcss.com/bulma/0.6.2/css/bulma.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="/bulma-preact.standalone.js?1520579811868"></script>
+</head>
+<body>
+
+    <div class="container columns">
+        <div class="column is-2"><aside class="menu "><p class="menu-label">Index</p><ul class="menu-list"><li><a href="/" class>Index</a></li></ul><p class="menu-label">Components</p><ul class="menu-list"><li><a href="/Columns/" class>Columns</a></li><li><a class>Components</a><ul><li><a href="/Components/Breadcrumb/" class>Breadcrumb</a></li><li><a href="/Components/Dropdown/" class>Dropdown</a></li><li><a href="/Components/Menu/" class>Menu</a></li><li><a href="/Components/Messages/" class>Messages</a></li><li><a href="/Components/Modal/" class>Modal</a></li><li><a href="/Components/Navbar/" class>Navbar</a></li><li><a href="/Components/Tabs/" class>Tabs</a></li></ul></li><li><a class>Elements</a><ul><li><a href="/Elements/Button/" class>Button</a></li><li><a href="/Elements/Card/" class=" is-active">Card</a></li><li><a href="/Elements/Content/" class>Content</a></li><li><a href="/Elements/Notification/" class>Notification</a></li><li><a href="/Elements/Progress/" class>Progress</a></li></ul></li><li><a href="/Form/" class>Form</a><ul><li><a href="/Form/Radio/" class>Radio</a></li><li><a href="/Form/Select/" class>Select</a></li></ul></li></ul></aside></div>
+        <div class="column content-holder"><div class="content"><h2 id="card">Card</h2>
+<p>create Card with image,header,footer.items etc.</p>
+<h3 id="props">Props</h3>
+<pre><code class="lang-ts"><span class="hljs-builtin-name">export</span><span class="hljs-built_in"> interface </span>CardProps extends BasePropsType {
+    image?: VNode
+    header?: {
+        title: string | VNode
+        icon?: string | VNode
+    }
+    footer?: {
+        buttons: ({
+            name: string
+            onClick?: {
+                (e: Event): void
+            }
+        })[]
+    }
+}
+</code></pre>
+<h3 id="demo">Demo</h3>
+</div><pre><code class="lang-tsx"><span class="hljs-keyword">import</span> { Card } from <span class="hljs-string">'bulma-preact'</span>
+<span class="hljs-keyword">import</span> { render, h } from <span class="hljs-string">'preact'</span>
+const image = &lt;img src=<span class="hljs-string">"https://bulma.io/images/placeholders/1280x960.png"</span>/&gt;
+const buttons = [<span class="hljs-string">'Yes'</span>, <span class="hljs-string">'No'</span>].<span class="hljs-keyword">map</span>(name =&gt; ({name}))
+render(&lt;div&gt;
+    &lt;Card className=<span class="hljs-string">"panel"</span> header={{title: <span class="hljs-string">'header'</span>}}&gt;something!&lt;/Card&gt;
+    &lt;Card className=<span class="hljs-string">"panel"</span> header={{title: <span class="hljs-string">'header'</span>}} footer={{buttons}}&gt;something!&lt;/Card&gt;
+    &lt;Card className=<span class="hljs-string">"panel"</span> image={image} header={{title: <span class="hljs-string">'header'</span>, icon: <span class="hljs-string">'angle-down'</span>}}&gt;something!&lt;/Card&gt;
+&lt;/div&gt;, container)
+</code></pre><div class="demo-holder" style="padding: .5em 0 2em"></div><div class="content">
+</div><script>(function (exports) {"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const container = document.querySelectorAll('.content-holder .lang-tsx')[0].parentNode.nextElementSibling;
+const bulma_preact_1 = BulmaPreact;
+const preact_1 = BulmaPreact.Preact;
+const image = preact_1.h("img", { src: "https://bulma.io/images/placeholders/1280x960.png" });
+const buttons = ['Yes', 'No'].map(name => ({ name }));
+preact_1.render(preact_1.h("div", null,
+    preact_1.h(bulma_preact_1.Card, { className: "panel", header: { title: 'header' } }, "something!"),
+    preact_1.h(bulma_preact_1.Card, { className: "panel", header: { title: 'header' }, footer: { buttons } }, "something!"),
+    preact_1.h(bulma_preact_1.Card, { className: "panel", image: image, header: { title: 'header', icon: 'angle-down' } }, "something!")), container);
+})({})</script></div>
+    </div>
+                
+<a href="https://github.com/bulma-preact/bulma-preact" target="_"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+</body>
+</html>
