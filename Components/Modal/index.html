@@ -14,12 +14,17 @@
     <link href="https://cdn.bootcss.com/bulma/0.6.2/css/bulma.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script src="/bulma-preact.standalone.js?1522823214322"></script>
+    <style>
+        body > .columns {margin: 0;}
+        .content-holder {height: calc(100vh - .75rem); overflow-y: auto;}
+        .content-holder pre { width: 99%; overflow-x: auto; }
+    </style>
+    <script src="/bulma-preact.standalone.js?1548763946892"></script>
 </head>
 <body>
 
-    <div class="container columns">
-        <div class="column is-2"><aside class="menu "><p class="menu-label">Index</p><ul class="menu-list"><li><a href="/" class>Index</a></li></ul><p class="menu-label">Components</p><ul class="menu-list"><li><a href="/Columns/" class>Columns</a></li><li><a class>Components</a><ul><li><a href="/Components/Breadcrumb/" class>Breadcrumb</a></li><li><a href="/Components/Dropdown/" class>Dropdown</a></li><li><a href="/Components/Menu/" class>Menu</a></li><li><a href="/Components/Messages/" class>Messages</a></li><li><a href="/Components/Modal/" class=" is-active">Modal</a></li><li><a href="/Components/Navbar/" class>Navbar</a></li><li><a href="/Components/Tabs/" class>Tabs</a></li><li><a href="/Components/TouchSelect/" class>TouchSelect</a></li></ul></li><li><a class>Elements</a><ul><li><a href="/Elements/Button/" class>Button</a></li><li><a href="/Elements/Card/" class>Card</a></li><li><a href="/Elements/Content/" class>Content</a></li><li><a href="/Elements/Notification/" class>Notification</a></li><li><a href="/Elements/Progress/" class>Progress</a></li></ul></li><li><a href="/Form/" class>Form</a><ul><li><a href="/Form/Radio/" class>Radio</a></li><li><a href="/Form/Select/" class>Select</a></li></ul></li></ul></aside></div>
+    <div class="columns">
+        <div class="column is-2 is-primary"><aside class="menu "><p class="menu-label">Index</p><ul class="menu-list"><li><a href="/" class>Index</a></li></ul><p class="menu-label">Components</p><ul class="menu-list"><li><a href="/Columns/" class>Columns</a></li><li><a class>Components</a><ul><li><a href="/Components/Breadcrumb/" class>Breadcrumb</a></li><li><a href="/Components/Dropdown/" class>Dropdown</a></li><li><a href="/Components/Menu/" class>Menu</a></li><li><a href="/Components/Messages/" class>Messages</a></li><li><a href="/Components/Modal/" class=" is-active">Modal</a></li><li><a href="/Components/Navbar/" class>Navbar</a></li><li><a href="/Components/Tabs/" class>Tabs</a></li></ul></li><li><a class>Elements</a><ul><li><a href="/Elements/Button/" class>Button</a></li><li><a href="/Elements/Card/" class>Card</a></li><li><a href="/Elements/Content/" class>Content</a></li><li><a href="/Elements/Notification/" class>Notification</a></li><li><a href="/Elements/Progress/" class>Progress</a></li></ul></li><li><a href="/Form/" class>Form</a><ul><li><a href="/Form/Radio/" class>Radio</a></li><li><a href="/Form/Select/" class>Select</a></li></ul></li></ul></aside></div>
         <div class="column content-holder"><div class="content"><h2 id="modal">Modal</h2>
 <p>create Modal handle active</p>
 <h3 id="props">Props</h3>
@@ -28,7 +33,9 @@ export <span class="hljs-class"><span class="hljs-keyword">interface</span> <spa
     isActive?: <span class="hljs-keyword">boolean</span>
     showClose?: <span class="hljs-keyword">boolean</span>
     onClose?: Function
-    modalContent?: string|VNode
+    card?: CardProps
+    withBackground?: <span class="hljs-keyword">boolean</span>
+    modalContent?: string | VNode | CardProps
 }
 <span class="hljs-comment">// Modal.Card</span>
 export <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">CardProps</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BasePropsType</span> {</span>
@@ -44,15 +51,21 @@ export <span class="hljs-class"><span class="hljs-keyword">interface</span> <spa
         })[]
     }
 }
+export <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Modal</span> {</span>
+    <span class="hljs-keyword">static</span> showModal(<span class="hljs-string">info:</span> string | VNode, <span class="hljs-string">options:</span> ModalProps) { }
+    <span class="hljs-keyword">static</span> hideModal() {}
+}
 </code></pre>
 <h3 id="demo">Demo</h3>
-</div><pre><code class="lang-tsx"><span class="hljs-keyword">import</span> { Modal, Button, Card, ModalCard } <span class="hljs-keyword">from</span> <span class="hljs-string">'bulma-preact'</span>
+</div><pre><code class="lang-tsx"><span class="hljs-keyword">import</span> { Modal, Button, Card, ModalCard, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'bulma-preact'</span>
 <span class="hljs-keyword">import</span> { render, h, Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'preact'</span>
 
 const modalContent = &lt;div className=<span class="hljs-string">"box"</span>&gt;
     &lt;h2&gt;h2&lt;/h2&gt;
     &lt;p&gt;content, content&lt;br/&gt; ok!&lt;/p&gt;
 &lt;/div&gt;
+
+
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ModalShow</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> {</span>
     constructor (props) {
@@ -77,7 +90,6 @@ const modalContent = &lt;div className=<span class="hljs-string">"box"</span>&gt
                 ]
             }
         }
-
         <span class="hljs-keyword">return</span> &lt;span&gt;
             &lt;Button onClick={<span class="hljs-keyword">this</span>.onClick}&gt;{node.children}&lt;/Button&gt;
             {<span class="hljs-keyword">this</span>.props.isCard
@@ -91,10 +103,24 @@ const modalContent = &lt;div className=<span class="hljs-string">"box"</span>&gt
         &lt;/span&gt;
     }
 }
+
 render(&lt;div className=<span class="hljs-string">"buttons"</span>&gt;
     &lt;ModalShow&gt;Open Modal&lt;/ModalShow&gt;
     &lt;ModalShow isCard&gt;Open Card Modal&lt;/ModalShow&gt;
     &lt;ModalShow innerCard&gt;Open Inner Card Modal&lt;/ModalShow&gt;
+    &lt;Button onClick={() =&gt; Modal.showModal(modalContent)}&gt;showModal(Box)&lt;/Button&gt;
+    &lt;Button onClick={() =&gt; Modal.showModal(
+        &lt;Card className=<span class="hljs-string">"panel"</span> header={{title: <span class="hljs-string">'header'</span>}} footer={{
+            buttons: [
+                {name: <span class="hljs-string">'Yes'</span>, isColor: <span class="hljs-string">'success'</span>, onClick: <span class="hljs-function"><span class="hljs-params">(e)</span> =&gt;</span> { Modal.close() }},
+                {name: <span class="hljs-string">'No'</span>, onClick: <span class="hljs-function"><span class="hljs-params">(e)</span> =&gt;</span> {alert(<span class="hljs-string">'No'</span>); Modal.close()} }
+            ]
+        }}&gt;nothing!&lt;/Card&gt;,
+        {
+            withBackground: <span class="hljs-literal">false</span>,
+            showClose: <span class="hljs-literal">false</span>
+        }
+    )}&gt;showModal(Card with buttons)&lt;/Button&gt;
 &lt;/div&gt;, container)
 </code></pre><div class="demo-holder" style="padding: .5em 0 2em"></div><div class="content">
 </div><script>(function (exports) {"use strict";
@@ -143,7 +169,17 @@ class ModalShow extends preact_1.Component {
 preact_1.render(preact_1.h("div", { className: "buttons" },
     preact_1.h(ModalShow, null, "Open Modal"),
     preact_1.h(ModalShow, { isCard: true }, "Open Card Modal"),
-    preact_1.h(ModalShow, { innerCard: true }, "Open Inner Card Modal")), container);
+    preact_1.h(ModalShow, { innerCard: true }, "Open Inner Card Modal"),
+    preact_1.h(bulma_preact_1.Button, { onClick: () => bulma_preact_1.Modal.showModal(modalContent) }, "showModal(Box)"),
+    preact_1.h(bulma_preact_1.Button, { onClick: () => bulma_preact_1.Modal.showModal(preact_1.h(bulma_preact_1.Card, { className: "panel", header: { title: 'header' }, footer: {
+                buttons: [
+                    { name: 'Yes', isColor: 'success', onClick: (e) => { bulma_preact_1.Modal.close(); } },
+                    { name: 'No', onClick: (e) => { alert('No'); bulma_preact_1.Modal.close(); } }
+                ]
+            } }, "nothing!"), {
+            withBackground: false,
+            showClose: false
+        }) }, "showModal(Card with buttons)")), container);
 })({})</script></div>
     </div>
                 

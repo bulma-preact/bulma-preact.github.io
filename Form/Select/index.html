@@ -14,12 +14,17 @@
     <link href="https://cdn.bootcss.com/bulma/0.6.2/css/bulma.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script src="/bulma-preact.standalone.js?1522823214322"></script>
+    <style>
+        body > .columns {margin: 0;}
+        .content-holder {height: calc(100vh - .75rem); overflow-y: auto;}
+        .content-holder pre { width: 99%; overflow-x: auto; }
+    </style>
+    <script src="/bulma-preact.standalone.js?1548763946892"></script>
 </head>
 <body>
 
-    <div class="container columns">
-        <div class="column is-2"><aside class="menu "><p class="menu-label">Index</p><ul class="menu-list"><li><a href="/" class>Index</a></li></ul><p class="menu-label">Components</p><ul class="menu-list"><li><a href="/Columns/" class>Columns</a></li><li><a class>Components</a><ul><li><a href="/Components/Breadcrumb/" class>Breadcrumb</a></li><li><a href="/Components/Dropdown/" class>Dropdown</a></li><li><a href="/Components/Menu/" class>Menu</a></li><li><a href="/Components/Messages/" class>Messages</a></li><li><a href="/Components/Modal/" class>Modal</a></li><li><a href="/Components/Navbar/" class>Navbar</a></li><li><a href="/Components/Tabs/" class>Tabs</a></li><li><a href="/Components/TouchSelect/" class>TouchSelect</a></li></ul></li><li><a class>Elements</a><ul><li><a href="/Elements/Button/" class>Button</a></li><li><a href="/Elements/Card/" class>Card</a></li><li><a href="/Elements/Content/" class>Content</a></li><li><a href="/Elements/Notification/" class>Notification</a></li><li><a href="/Elements/Progress/" class>Progress</a></li></ul></li><li><a href="/Form/" class>Form</a><ul><li><a href="/Form/Radio/" class>Radio</a></li><li><a href="/Form/Select/" class=" is-active">Select</a></li></ul></li></ul></aside></div>
+    <div class="columns">
+        <div class="column is-2 is-primary"><aside class="menu "><p class="menu-label">Index</p><ul class="menu-list"><li><a href="/" class>Index</a></li></ul><p class="menu-label">Components</p><ul class="menu-list"><li><a href="/Columns/" class>Columns</a></li><li><a class>Components</a><ul><li><a href="/Components/Breadcrumb/" class>Breadcrumb</a></li><li><a href="/Components/Dropdown/" class>Dropdown</a></li><li><a href="/Components/Menu/" class>Menu</a></li><li><a href="/Components/Messages/" class>Messages</a></li><li><a href="/Components/Modal/" class>Modal</a></li><li><a href="/Components/Navbar/" class>Navbar</a></li><li><a href="/Components/Tabs/" class>Tabs</a></li></ul></li><li><a class>Elements</a><ul><li><a href="/Elements/Button/" class>Button</a></li><li><a href="/Elements/Card/" class>Card</a></li><li><a href="/Elements/Content/" class>Content</a></li><li><a href="/Elements/Notification/" class>Notification</a></li><li><a href="/Elements/Progress/" class>Progress</a></li></ul></li><li><a href="/Form/" class>Form</a><ul><li><a href="/Form/Radio/" class>Radio</a></li><li><a href="/Form/Select/" class=" is-active">Select</a></li></ul></li></ul></aside></div>
         <div class="column content-holder"><div class="content"><h2 id="select">Select</h2>
 <h3 id="props">Props</h3>
 <table>
@@ -59,33 +64,33 @@
 </tbody>
 </table>
 <h3 id="demo">Demo</h3>
-</div><pre><code class="lang-tsx"><span class="xml">import </span><span class="hljs-template-variable">{ Form, Columns }</span><span class="xml"> from 'bulma-preact'
-import </span><span class="hljs-template-variable">{ render, h }</span><span class="xml"> from 'preact'
-const </span><span class="hljs-template-variable">{ <span class="hljs-keyword">Select</span> }</span><span class="xml"> = Form
-const </span><span class="hljs-template-variable">{ Column }</span><span class="xml"> = Columns
-const options = [
-    </span><span class="hljs-template-variable">{ name: '请选择', value: ''}</span><span class="xml">,
-    </span><span class="hljs-template-variable">{ name: 'Form', value: '1'}</span><span class="xml">,
-    </span><span class="hljs-template-variable">{ name: 'Elements', value: '2'}</span><span class="xml">,
-    </span><span class="hljs-template-variable">{ name: 'Components', value: '3'}</span><span class="xml">
+</div><pre><code class="lang-tsx"><span class="hljs-keyword">import</span> { Form, <span class="hljs-keyword">Columns</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'bulma-preact'</span>
+<span class="hljs-keyword">import</span> { render, h } <span class="hljs-keyword">from</span> <span class="hljs-string">'preact'</span>
+const { <span class="hljs-keyword">Select</span> } = Form
+const { <span class="hljs-keyword">Column</span> } = <span class="hljs-keyword">Columns</span>
+const <span class="hljs-keyword">options</span> = [
+    { <span class="hljs-type">name</span>: <span class="hljs-string">'请选择'</span>, <span class="hljs-keyword">value</span>: <span class="hljs-string">''</span>},
+    { <span class="hljs-type">name</span>: <span class="hljs-string">'Form'</span>, <span class="hljs-keyword">value</span>: <span class="hljs-string">'1'</span>},
+    { <span class="hljs-type">name</span>: <span class="hljs-string">'Elements'</span>, <span class="hljs-keyword">value</span>: <span class="hljs-string">'2'</span>},
+    { <span class="hljs-type">name</span>: <span class="hljs-string">'Components'</span>, <span class="hljs-keyword">value</span>: <span class="hljs-string">'3'</span>}
 ]
-render(<span class="hljs-tag">&lt;<span class="hljs-name">Columns</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">Column</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">Select</span> <span class="hljs-attr">options</span>=</span></span><span class="hljs-template-variable">{options}</span><span class="xml"><span class="hljs-tag"> /&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">Column</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">Column</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">Select</span> <span class="hljs-attr">options</span>=</span></span><span class="hljs-template-variable">{options}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">value</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">isColor</span>=<span class="hljs-string">"danger"</span>/&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">Column</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">Column</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">Select</span> <span class="hljs-attr">options</span>=</span></span><span class="hljs-template-variable">{options}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">isDisabled</span>/&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">Column</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">Column</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">Select</span> <span class="hljs-attr">options</span>=</span></span><span class="hljs-template-variable">{options}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">isRounded</span>/&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">Column</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">Column</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">Select</span> <span class="hljs-attr">options</span>=</span></span><span class="hljs-template-variable">{options}</span><span class="xml"><span class="hljs-tag"> <span class="hljs-attr">isSize</span>=<span class="hljs-string">"small"</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">size</span>=</span></span><span class="hljs-template-variable">{4}</span><span class="xml"><span class="hljs-tag">/&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">Column</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">Columns</span>&gt;</span>, container)</span>
+render(&lt;<span class="hljs-keyword">Columns</span>&gt;
+    &lt;<span class="hljs-keyword">Column</span>&gt;
+        &lt;<span class="hljs-keyword">Select</span> <span class="hljs-keyword">options</span>={<span class="hljs-keyword">options</span>} /&gt;
+    &lt;/<span class="hljs-keyword">Column</span>&gt;
+    &lt;<span class="hljs-keyword">Column</span>&gt;
+        &lt;<span class="hljs-keyword">Select</span> <span class="hljs-keyword">options</span>={<span class="hljs-keyword">options</span>} <span class="hljs-keyword">value</span>="2" isColor="danger"/&gt;
+    &lt;/<span class="hljs-keyword">Column</span>&gt;
+    &lt;<span class="hljs-keyword">Column</span>&gt;
+        &lt;<span class="hljs-keyword">Select</span> <span class="hljs-keyword">options</span>={<span class="hljs-keyword">options</span>} <span class="hljs-keyword">value</span>="1" isDisabled/&gt;
+    &lt;/<span class="hljs-keyword">Column</span>&gt;
+    &lt;<span class="hljs-keyword">Column</span>&gt;
+        &lt;<span class="hljs-keyword">Select</span> <span class="hljs-keyword">options</span>={<span class="hljs-keyword">options</span>} isRounded/&gt;
+    &lt;/<span class="hljs-keyword">Column</span>&gt;
+    &lt;<span class="hljs-keyword">Column</span>&gt;
+        &lt;<span class="hljs-keyword">Select</span> <span class="hljs-keyword">options</span>={<span class="hljs-keyword">options</span>} isSize="small" multiple size={<span class="hljs-number">4</span>}/&gt;
+    &lt;/<span class="hljs-keyword">Column</span>&gt;
+&lt;/<span class="hljs-keyword">Columns</span>&gt;, container)
 </code></pre><div class="demo-holder" style="padding: .5em 0 2em"></div><div class="content">
 </div><script>(function (exports) {"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });

@@ -14,12 +14,17 @@
     <link href="https://cdn.bootcss.com/bulma/0.6.2/css/bulma.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script src="/bulma-preact.standalone.js?1522823214322"></script>
+    <style>
+        body > .columns {margin: 0;}
+        .content-holder {height: calc(100vh - .75rem); overflow-y: auto;}
+        .content-holder pre { width: 99%; overflow-x: auto; }
+    </style>
+    <script src="/bulma-preact.standalone.js?1548763946892"></script>
 </head>
 <body>
 
-    <div class="container columns">
-        <div class="column is-2"><aside class="menu "><p class="menu-label">Index</p><ul class="menu-list"><li><a href="/" class>Index</a></li></ul><p class="menu-label">Components</p><ul class="menu-list"><li><a href="/Columns/" class>Columns</a></li><li><a class>Components</a><ul><li><a href="/Components/Breadcrumb/" class>Breadcrumb</a></li><li><a href="/Components/Dropdown/" class>Dropdown</a></li><li><a href="/Components/Menu/" class=" is-active">Menu</a></li><li><a href="/Components/Messages/" class>Messages</a></li><li><a href="/Components/Modal/" class>Modal</a></li><li><a href="/Components/Navbar/" class>Navbar</a></li><li><a href="/Components/Tabs/" class>Tabs</a></li><li><a href="/Components/TouchSelect/" class>TouchSelect</a></li></ul></li><li><a class>Elements</a><ul><li><a href="/Elements/Button/" class>Button</a></li><li><a href="/Elements/Card/" class>Card</a></li><li><a href="/Elements/Content/" class>Content</a></li><li><a href="/Elements/Notification/" class>Notification</a></li><li><a href="/Elements/Progress/" class>Progress</a></li></ul></li><li><a href="/Form/" class>Form</a><ul><li><a href="/Form/Radio/" class>Radio</a></li><li><a href="/Form/Select/" class>Select</a></li></ul></li></ul></aside></div>
+    <div class="columns">
+        <div class="column is-2 is-primary"><aside class="menu "><p class="menu-label">Index</p><ul class="menu-list"><li><a href="/" class>Index</a></li></ul><p class="menu-label">Components</p><ul class="menu-list"><li><a href="/Columns/" class>Columns</a></li><li><a class>Components</a><ul><li><a href="/Components/Breadcrumb/" class>Breadcrumb</a></li><li><a href="/Components/Dropdown/" class>Dropdown</a></li><li><a href="/Components/Menu/" class=" is-active">Menu</a></li><li><a href="/Components/Messages/" class>Messages</a></li><li><a href="/Components/Modal/" class>Modal</a></li><li><a href="/Components/Navbar/" class>Navbar</a></li><li><a href="/Components/Tabs/" class>Tabs</a></li></ul></li><li><a class>Elements</a><ul><li><a href="/Elements/Button/" class>Button</a></li><li><a href="/Elements/Card/" class>Card</a></li><li><a href="/Elements/Content/" class>Content</a></li><li><a href="/Elements/Notification/" class>Notification</a></li><li><a href="/Elements/Progress/" class>Progress</a></li></ul></li><li><a href="/Form/" class>Form</a><ul><li><a href="/Form/Radio/" class>Radio</a></li><li><a href="/Form/Select/" class>Select</a></li></ul></li></ul></aside></div>
         <div class="column content-holder"><div class="content"><h2 id="menu">Menu</h2>
 <p>build menu list by tree-object</p>
 <h3 id="menu-props">Menu Props</h3>
