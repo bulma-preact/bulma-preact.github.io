@@ -19,7 +19,7 @@
         .content-holder {height: calc(100vh - .75rem); overflow-y: auto;}
         .content-holder pre { width: 99%; overflow-x: auto; }
     </style>
-    <script src="/bulma-preact.standalone.js?1563935943320"></script>
+    <script src="/bulma-preact.standalone.js?1563936479369"></script>
 </head>
 <body>
 
@@ -91,7 +91,7 @@
         <span class="hljs-attr">filter</span>: <span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> <span class="hljs-literal">true</span>
     }
     onChange = <span class="hljs-function">(<span class="hljs-params">valid, filter</span>) =&gt;</span> {
-        <span class="hljs-keyword">if</span> (valid) {
+        <span class="hljs-keyword">if</span> (valid &amp;&amp; filter) {
             <span class="hljs-keyword">this</span>.setState({filter})
         }
     }
@@ -130,7 +130,7 @@ class Demo extends preact_1.Component {
             filter: (item) => true
         };
         this.onChange = (valid, filter) => {
-            if (valid) {
+            if (valid && filter) {
                 this.setState({ filter });
             }
         };
